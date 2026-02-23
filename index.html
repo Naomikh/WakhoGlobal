@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wakho Global | General Trading & Projects</title>
+  <meta name="description" content="Wakho Global provides IT equipment supply, cleaning services, and security solutions across South Africa." />
+  <style>
+    :root{
+      --bg:#f6f8fc;
+      --surface:#ffffff;
+      --surface2:#f1f5ff;
+      --text:#0f172a;
+      --muted:#475569;
+      --border:rgba(15,23,42,.12);
+      --shadow: 0 18px 45px rgba(2,6,23,.12);
+      --radius:18px;
+      --max:1180px;
+      --brand:#2563eb;
+      --brand2:#0ea5a4;
+      --ring: rgba(37,99,235,.25);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(900px 500px at 15% -5%, rgba(37,99,235,.14), transparent 60%),
+        radial-gradient(900px 500px at 90% 5%, rgba(14,165,164,.10), transparent 60%),
+        var(--bg);
+      line-height:1.55;
+    }
+    a{color:inherit}
+    .container{max-width:var(--max); margin:0 auto; padding:0 20px}
+    .skip{position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden}
+    .skip:focus{left:16px; top:16px; width:auto; height:auto; padding:10px 12px; background:#fff; color:#000; border-radius:12px; z-index:9999; box-shadow:var(--shadow)}
+
+    header{
+      position:sticky; top:0; z-index:50;
+      background: rgba(246,248,252,.78);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--border);
+    }
+    .navwrap{display:flex; align-items:center; justify-content:space-between; padding:14px 0; gap:16px}
+    .brand{display:flex; align-items:center; gap:12px; text-decoration:none; min-width: 240px;}
+    .logo{
+      width:44px; height:44px; border-radius:14px;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      box-shadow: 0 14px 30px rgba(37,99,235,.20);
+    }
+    .brand b{display:block; font-size:15px; letter-spacing:.2px}
+    .brand span{display:block; font-size:12px; color:var(--muted)}
+    nav{display:flex; align-items:center; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+    nav a{text-decoration:none; color:var(--muted); font-size:14px; padding:8px 10px; border-radius:12px;}
+    nav a:hover{color:var(--text); background: rgba(15,23,42,.05)}
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 16px; border-radius:14px;
+      border:1px solid var(--border);
+      background: var(--surface);
+      color:var(--text);
+      text-decoration:none;
+      font-weight:700;
+      font-size:14px;
+      box-shadow: 0 10px 25px rgba(2,6,23,.08);
+      transition: transform .12s ease, box-shadow .12s ease;
+    }
+    .btn:hover{transform: translateY(-1px); box-shadow: 0 14px 30px rgba(2,6,23,.12)}
+    .btn.primary{
+      border-color: rgba(37,99,235,.28);
+      background: linear-gradient(135deg, var(--brand), rgba(37,99,235,.82));
+      color:#fff;
+    }
+    .btn.ghost{background: transparent; box-shadow:none}
+    .btn.small{padding:10px 12px; border-radius:12px; font-weight:700}
+
+    section{padding:72px 0}
+    .hero{padding:56px 0 34px}
+    .heroGrid{display:grid; grid-template-columns: 1.15fr .85fr; gap:22px; align-items:stretch;}
+    .heroCard{
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      background: var(--surface);
+    }
+    .heroMedia{
+      position:relative;
+      height: 260px;
+      background: #0b1220;
+    }
+    .heroMedia img{width:100%; height:100%; object-fit:cover; display:block; filter:saturate(1.05) contrast(1.02);}
+    .heroOverlay{
+      position:absolute; inset:0;
+      background: linear-gradient(90deg, rgba(255,255,255,.92), rgba(255,255,255,.70) 55%, rgba(255,255,255,.20));
+    }
+    .heroBody{padding:26px 28px}
+    h1{margin:0 0 10px; font-size:42px; line-height:1.10; letter-spacing:-.8px}
+    .lead{margin:0 0 16px; color:var(--muted); font-size:16px; max-width:65ch}
+    .ctaRow{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+    .chips{display:flex; flex-wrap:wrap; gap:10px; margin-top:18px}
+    .chip{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 10px; border-radius:999px;
+      border:1px solid rgba(15,23,42,.10);
+      background: rgba(255,255,255,.7);
+      font-size:12px; color:var(--muted);
+    }
+    .dot{width:8px; height:8px; border-radius:99px; background: var(--brand2)}
+
+    .sideCard{
+      border:1px solid var(--border);
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding:22px;
+      box-shadow: var(--shadow);
+      display:flex; flex-direction:column; gap:14px;
+    }
+    .mini{
+      border:1px solid rgba(15,23,42,.10);
+      background: linear-gradient(180deg, rgba(37,99,235,.06), rgba(14,165,164,.05));
+      border-radius: 16px;
+      padding:14px;
+      display:flex; gap:12px; align-items:flex-start;
+    }
+    .icon{
+      width:36px; height:36px; border-radius:12px;
+      background: linear-gradient(135deg, rgba(37,99,235,.20), rgba(14,165,164,.18));
+      border:1px solid rgba(15,23,42,.08);
+      flex:0 0 auto;
+    }
+    .sideCard h3{margin:0; font-size:16px}
+    .sideCard p{margin:0; color:var(--muted); font-size:13px}
+
+    .sectionTitle{display:flex; align-items:flex-end; justify-content:space-between; gap:16px; margin-bottom:18px}
+    .sectionTitle h2{margin:0; font-size:28px; letter-spacing:-.3px}
+    .sectionTitle p{margin:0; color:var(--muted); max-width:70ch}
+
+    .grid3{display:grid; grid-template-columns: repeat(3, 1fr); gap:16px}
+    .grid2{display:grid; grid-template-columns: repeat(2, 1fr); gap:16px}
+
+    .card{
+      border:1px solid var(--border);
+      background: var(--surface);
+      border-radius: var(--radius);
+      overflow:hidden;
+      box-shadow: 0 12px 30px rgba(2,6,23,.10);
+    }
+    .cardBody{padding:18px 18px 20px}
+    .card h3{margin:0 0 8px; font-size:18px}
+    .card p{margin:0 0 14px; color:var(--muted)}
+    .card .meta{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
+    .pill{
+      font-size:12px; color:var(--muted);
+      border:1px solid rgba(15,23,42,.10);
+      background: rgba(37,99,235,.05);
+      padding:6px 8px; border-radius:999px;
+    }
+    .cardMedia{height:170px; background:#e2e8f0; position:relative;}
+    .cardMedia img{width:100%; height:100%; object-fit:cover; display:block;}
+    .tag{
+      position:absolute; left:14px; top:14px;
+      background: rgba(255,255,255,.88);
+      border:1px solid rgba(15,23,42,.10);
+      padding:7px 10px;
+      border-radius:999px;
+      font-size:12px;
+      color: var(--muted);
+      backdrop-filter: blur(6px);
+    }
+
+    .linkRow{display:flex; gap:10px; flex-wrap:wrap}
+
+    .whyRow{display:grid; grid-template-columns: repeat(4, 1fr); gap:14px; margin-top:16px}
+    .whyItem{
+      border:1px solid rgba(15,23,42,.10);
+      background: linear-gradient(180deg, rgba(255,255,255,.9), rgba(255,255,255,.65));
+      border-radius: 16px;
+      padding:16px;
+      display:flex; gap:12px; align-items:flex-start;
+      box-shadow: 0 10px 20px rgba(2,6,23,.06);
+    }
+    .whyItem b{display:block}
+    .whyItem span{display:block; color:var(--muted); font-size:13px; margin-top:2px}
+
+    .band{
+      border:1px solid rgba(15,23,42,.10);
+      background: linear-gradient(135deg, rgba(37,99,235,.08), rgba(14,165,164,.06));
+      border-radius: var(--radius);
+      padding:22px;
+      box-shadow: 0 14px 28px rgba(2,6,23,.08);
+    }
+
+    form{display:grid; gap:12px}
+    label{font-size:13px; color:var(--muted)}
+    input, select, textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius: 14px;
+      border:1px solid rgba(15,23,42,.16);
+      background: #fff;
+      color: var(--text);
+      outline:none;
+      box-shadow: 0 0 0 0 rgba(0,0,0,0);
+    }
+    input:focus, select:focus, textarea:focus{
+      border-color: rgba(37,99,235,.40);
+      box-shadow: 0 0 0 6px var(--ring);
+    }
+    textarea{min-height:130px; resize:vertical}
+    .formRow{display:grid; grid-template-columns: 1fr 1fr; gap:12px}
+    .hint{font-size:12px; color:var(--muted)}
+
+    .map{width:100%; height:320px; border:0; border-radius: var(--radius); overflow:hidden; background:#e2e8f0;}
+
+    footer{border-top:1px solid var(--border); background: rgba(255,255,255,.65); padding:34px 0;}
+    .footGrid{display:grid; grid-template-columns: 1.2fr .8fr 1fr; gap:16px}
+    .footGrid h4{margin:0 0 10px}
+    .footGrid a{color:var(--muted); text-decoration:none}
+    .footGrid a:hover{color:var(--text)}
+    .copy{margin-top:18px; color:var(--muted); font-size:12px; text-align:center}
+
+    @media (max-width: 980px){
+      .heroGrid{grid-template-columns: 1fr}
+      h1{font-size:36px}
+      .grid3{grid-template-columns: 1fr}
+      .grid2{grid-template-columns: 1fr}
+      .whyRow{grid-template-columns: 1fr 1fr}
+      .footGrid{grid-template-columns: 1fr}
+      .formRow{grid-template-columns: 1fr}
+      .brand{min-width:auto}
+    }
+    @media (max-width: 520px){
+      h1{font-size:32px}
+      .whyRow{grid-template-columns: 1fr}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header>
+    <div class="container">
+      <div class="navwrap">
+        <a class="brand" href="#top" aria-label="Wakho Global home">
+          <div class="logo" aria-hidden="true"></div>
+          <div><b>Wakho Global</b><span>General Trading & Projects</span></div>
+        </a>
+        <nav aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#why">Why Us</a>
+          <a href="#contact">Contact</a>
+          <a class="btn small primary" href="#contact">Request a Quote</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="container">
+        <div class="heroGrid">
+          <div class="heroCard">
+            <div class="heroMedia" aria-hidden="true">
+              <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHRlY2glMjBvZmZpY2V8ZW58MHx8MHx8fDA%3D&ixlib=rb-4.1.0&q=60&w=2400" alt="" loading="lazy" />
+              <div class="heroOverlay"></div>
+            </div>
+            <div class="heroBody">
+              <h1>Professional Multi‑Sector Services, Delivered</h1>
+              <p class="lead">Wakho Global provides dependable IT equipment supply, high‑standard cleaning services, and practical security solutions—serving businesses and communities across South Africa.</p>
+              <div class="ctaRow">
+                <a class="btn primary" href="#contact">Request a Quote</a>
+                <a class="btn ghost" href="#services">Explore Services</a>
+              </div>
+              <div class="chips" aria-label="Highlights">
+                <span class="chip"><span class="dot" aria-hidden="true"></span> Reliable delivery</span>
+                <span class="chip"><span class="dot" aria-hidden="true"></span> Trained teams</span>
+                <span class="chip"><span class="dot" aria-hidden="true"></span> Competitive pricing</span>
+                <span class="chip"><span class="dot" aria-hidden="true"></span> Responsive support</span>
+              </div>
+            </div>
+          </div>
+
+          <aside class="sideCard" aria-label="Quick info">
+            <div class="mini"><div class="icon" aria-hidden="true"></div><div><h3>Fast, responsive service</h3><p>Tell us what you need and we’ll respond with a tailored quote.</p></div></div>
+            <div class="mini"><div class="icon" aria-hidden="true"></div><div><h3>One provider, multiple services</h3><p>Convenient solutions across IT, cleaning, and security.</p></div></div>
+            <div class="mini"><div class="icon" aria-hidden="true"></div><div><h3>Based in Hammarsdale</h3><p>Mthoko Mkhize Drive, Hammarsdale, 3699</p></div></div>
+            <div class="linkRow">
+              <a class="btn primary" href="mailto:info@wakhoglobal.com">Email Us</a>
+              <a class="btn" href="#contact">Get in Touch</a>
+            </div>
+            <p class="hint">Email: <b>info@wakhoglobal.com</b></p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="sectionTitle">
+          <div>
+            <h2>Our Core Services</h2>
+            <p>Clear, focused offerings designed for business, public sector, and household needs.</p>
+          </div>
+        </div>
+
+        <div class="grid3">
+          <article class="card" id="it">
+            <div class="cardMedia">
+              <span class="tag">IT Supply</span>
+              <img src="https://images.unsplash.com/photo-1526406915894-7bcd65f60845?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aXQlMjBlcXVpcG1lbnR8ZW58MHx8MHx8fDA%3D&ixlib=rb-4.1.0&q=60&w=2400" alt="IT equipment and devices" loading="lazy" />
+            </div>
+            <div class="cardBody">
+              <h3>IT Equipment Supply</h3>
+              <p>Laptops, desktops, networking equipment, printers, consumables, plus installation and support.</p>
+              <div class="meta">
+                <span class="pill">Laptops & Desktops</span><span class="pill">Networking</span><span class="pill">Printers</span><span class="pill">Support</span>
+              </div>
+              <div style="height:14px"></div>
+              <div class="linkRow">
+                <a class="btn primary" href="#contact" onclick="prefillService('IT Equipment Supply')">Request IT Quote</a>
+                <a class="btn" href="#about">About Us</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" id="cleaning">
+            <div class="cardMedia">
+              <span class="tag">Cleaning</span>
+              <img src="https://images.unsplash.com/photo-1740657254989-42fe9c3b8cce?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2xlYW5pbmclMjBzZXJ2aWNlfGVufDB8fDB8fHww&ixlib=rb-4.1.0&q=60&w=2400" alt="Professional cleaning in progress" loading="lazy" />
+            </div>
+            <div class="cardBody">
+              <h3>Cleaning Services</h3>
+              <p>Commercial, office, residential, and post‑construction cleaning—delivered consistently.</p>
+              <div class="meta">
+                <span class="pill">Commercial</span><span class="pill">Office</span><span class="pill">Residential</span><span class="pill">Post‑construction</span>
+              </div>
+              <div style="height:14px"></div>
+              <div class="linkRow">
+                <a class="btn primary" href="#contact" onclick="prefillService('Cleaning Services')">Book Cleaning</a>
+                <a class="btn" href="#why">Why Choose Us</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" id="security">
+            <div class="cardMedia">
+              <span class="tag">Security</span>
+              <img src="https://images.unsplash.com/photo-1485230405346-71acb9518d9c?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2VjdXJpdHklMjBndWFyZHxlbnwwfHwwfHx8MA%3D%3D&ixlib=rb-4.1.0&q=60&w=2400" alt="Security services at a building entrance" loading="lazy" />
+            </div>
+            <div class="cardBody">
+              <h3>Security Services</h3>
+              <p>Guarding, event security, CCTV installation, and access control for safer operations.</p>
+              <div class="meta">
+                <span class="pill">Guarding</span><span class="pill">Events</span><span class="pill">CCTV</span><span class="pill">Access Control</span>
+              </div>
+              <div style="height:14px"></div>
+              <div class="linkRow">
+                <a class="btn primary" href="#contact" onclick="prefillService('Security Services')">Request Assessment</a>
+                <a class="btn" href="#contact">Contact</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="sectionTitle">
+          <div>
+            <h2>About Wakho Global</h2>
+            <p>A proudly South African multi‑service provider built on reliability, professionalism, affordability, and experienced leadership.</p>
+          </div>
+        </div>
+
+        <div class="grid2">
+          <div class="card">
+            <div class="cardBody">
+              <h3>Company Background</h3>
+              <p>Wakho General Trading and Projects is a black‑owned South African company established to provide reliable, professional multi‑sector services across the country.</p>
+              <p class="hint">Tip: paste your full “Company Background” from your profile document here if you want it longer.</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="cardBody">
+              <h3>Who We Are</h3>
+              <ul style="margin:0; padding-left:18px; color:var(--muted)">
+                <li>Action‑oriented leadership</li>
+                <li>Productivity through people</li>
+                <li>Simple and effective structures</li>
+                <li>Hands‑on management</li>
+                <li>Strong value‑driven culture</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div style="height:16px"></div>
+
+        <div class="band">
+          <div class="grid2" style="gap:18px">
+            <div>
+              <h3 style="margin:0 0 8px">Our Mission</h3>
+              <p style="margin:0; color:var(--muted)">To deliver high‑quality, reliable, and cost‑effective services that contribute to sustainable development and client satisfaction.</p>
+            </div>
+            <div>
+              <h3 style="margin:0 0 8px">Our Vision</h3>
+              <p style="margin:0; color:var(--muted)">To become a leading multi‑service provider recognised for excellence, integrity, and empowerment in South Africa.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="why">
+      <div class="container">
+        <div class="sectionTitle">
+          <div>
+            <h2>Why Choose Us</h2>
+            <p>We focus on consistent delivery, trusted teams, and practical solutions that work.</p>
+          </div>
+        </div>
+
+        <div class="whyRow">
+          <div class="whyItem"><div class="icon" aria-hidden="true"></div><div><b>Reliable</b><span>Dependable delivery and service continuity.</span></div></div>
+          <div class="whyItem"><div class="icon" aria-hidden="true"></div><div><b>Professional</b><span>Trained teams and strong service standards.</span></div></div>
+          <div class="whyItem"><div class="icon" aria-hidden="true"></div><div><b>Affordable</b><span>Cost‑effective solutions tailored to your needs.</span></div></div>
+          <div class="whyItem"><div class="icon" aria-hidden="true"></div><div><b>Experienced</b><span>Hands‑on management with practical expertise.</span></div></div>
+        </div>
+
+        <div style="height:22px"></div>
+
+        <div class="card">
+          <div class="cardBody">
+            <h3>Our Commitment</h3>
+            <p>We are committed to quality workmanship, reliable service delivery, and professional support—building long‑term relationships based on trust and performance.</p>
+            <div class="ctaRow">
+              <a class="btn primary" href="#contact">Request a Quote</a>
+              <a class="btn" href="#services">View Services</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="sectionTitle">
+          <div>
+            <h2>Contact Us</h2>
+            <p>Send an enquiry and we’ll get back to you. Or email us directly.</p>
+          </div>
+        </div>
+
+        <div class="grid2">
+          <div class="card">
+            <div class="cardBody">
+              <h3>Request a Quote</h3>
+              <form id="quoteForm" onsubmit="return handleSubmit(event)">
+                <div class="formRow">
+                  <div><label for="name">Full Name</label><input id="name" name="name" placeholder="Your name" required /></div>
+                  <div><label for="email">Email</label><input id="email" name="email" type="email" placeholder="you@email.com" required /></div>
+                </div>
+                <div class="formRow">
+                  <div><label for="phone">Phone (optional)</label><input id="phone" name="phone" placeholder="e.g. 07X XXX XXXX" /></div>
+                  <div><label for="service">Service</label>
+                    <select id="service" name="service" required>
+                      <option value="">Select a service</option>
+                      <option>IT Equipment Supply</option>
+                      <option>Cleaning Services</option>
+                      <option>Security Services</option>
+                      <option>Other / Custom Request</option>
+                    </select>
+                  </div>
+                </div>
+                <div><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell us what you need (scope, location, timeframe, quantity)..." required></textarea></div>
+                <button class="btn primary" type="submit">Send Enquiry</button>
+                <p class="hint" id="formHint" style="margin:0">Demo only: connect this form to email/backend for production.</p>
+              </form>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="cardBody">
+              <h3>Details</h3>
+              <p style="color:var(--muted); margin-top:0">
+                <b>Email:</b> <a href="mailto:info@wakhoglobal.com">info@wakhoglobal.com</a><br />
+                <b>Address:</b> Mthoko Mkhize Drive, Hammarsdale, 3699
+              </p>
+              <div style="height:10px"></div>
+              <div class="band" style="padding:14px">
+                <p style="margin:0; color:var(--muted); font-size:13px">
+                  <b>Phone / WhatsApp:</b> Add your number here when ready.<br />
+                  <span class="hint">Tip: WhatsApp link format: https://wa.me/27XXXXXXXXX</span>
+                </p>
+              </div>
+              <div style="height:14px"></div>
+              <iframe class="map" title="Map - Hammarsdale" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Hammarsdale%203699&output=embed"></iframe>
+              <div style="height:14px"></div>
+              <div class="linkRow">
+                <a class="btn" href="mailto:info@wakhoglobal.com">Email</a>
+                <a class="btn primary" href="#top">Back to Top</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footGrid">
+        <div>
+          <h4>Wakho Global</h4>
+          <p class="hint" style="margin:0">General Trading & Projects — IT equipment supply, cleaning services, and security solutions across South Africa.</p>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <p style="margin:0">
+            <a href="#it">IT Equipment Supply</a><br />
+            <a href="#cleaning">Cleaning Services</a><br />
+            <a href="#security">Security Services</a>
+          </p>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p style="margin:0">
+            <a href="mailto:info@wakhoglobal.com">info@wakhoglobal.com</a><br />
+            Mthoko Mkhize Drive, Hammarsdale, 3699
+          </p>
+        </div>
+      </div>
+      <div class="copy">© <span id="year"></span> Wakho Global. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    function prefillService(serviceName){
+      const el = document.getElementById("service");
+      if(!el) return;
+      el.value = serviceName;
+      document.getElementById("message")?.focus();
+    }
+    function handleSubmit(e){
+      e.preventDefault();
+      const hint = document.getElementById("formHint");
+      hint.textContent = "Thanks! Your enquiry is ready to be sent. Connect this form to your email/backend for production.";
+      hint.style.color = "var(--brand2)";
+      e.target.reset();
+      return false;
+    }
+  </script>
+</body>
+</html>
